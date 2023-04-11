@@ -1,0 +1,19 @@
+.loginDiv {
+    border: $border;
+    padding: 5px;
+}
+.main-content {
+    border: $border;
+}
+// .ratingDiv {
+//     display: flex;
+// }
+.ratings {
+    display: flex; 
+    input {
+        display: block;
+    }   
+    label {
+        text-align: center;
+    }
+}

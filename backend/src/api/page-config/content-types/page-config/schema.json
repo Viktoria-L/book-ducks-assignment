@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "page_configs",
+  "info": {
+    "singularName": "page-config",
+    "pluralName": "page-configs",
+    "displayName": "pageConfig"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "theme": {
+      "type": "enumeration",
+      "enum": [
+        "earth",
+        "water",
+        "fire",
+        "wind"
+      ],
+      "default": "earth",
+      "required": true
+    }
+  }
+}

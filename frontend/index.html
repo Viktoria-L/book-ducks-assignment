@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Ducks</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://kit.fontawesome.com/f43b64805c.js" crossorigin="anonymous"></script>
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <header>
+       <h1>Book Ducks</h1><h2>~ Insert slogan ~</h2>
+       <nav>
+        <a href="index.html">Hem</a>
+        <a href="profile.html">Profilsida</a>
+        </nav>
+    </header>
+    <main>
+        <div class="loginOrRegister">
+            <div class="loginDiv">
+                <div class="login">
+                    <label for="username">Användarnamn
+                        <input type="text" name="username" id="username">
+                    </label>
+                    <label for="password">Lösenord
+                        <input type="password" name="password" id="password">
+                    </label>
+                </div>
+                    
+                
+                <div class="hidden" id="registerDiv">
+                    <label for="username">Användarnamn
+                        <input type="text" name="username" id="regUsername">
+                    </label>
+                    <label for="email">Email
+                        <input type="email" name="email" id="regEmail">
+                    </label>
+                    <label for="password">Lösenord
+                        <input type="password" name="password" id="regPassword">
+                    </label>
+        
+                </div>
+                 <button type="submit" id="loginBtn">Logga in</button>
+                    <button id="registerBtn">Registrera dig</button>  
+            </div>
+            
+        </div>
+        <div class="main-content">
+            <div class="welcomeMessage"></div>
+
+            <div class="bookShelf"></div>
+
+        </div>
+
+
+
+
+
+    </main>
+    <footer></footer>
+</body>
+</html>
