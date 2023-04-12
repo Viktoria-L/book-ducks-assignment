@@ -9,6 +9,7 @@ const bookListTBody = document.querySelector("#book-list");
 const titleHeader = document.getElementById("titleHeader");
 const authorHeader = document.getElementById("authorHeader");
 const ratingHeader = document.getElementById("ratingHeader");
+
 let sortOrder = "asc";
 
 
@@ -17,6 +18,7 @@ const usernameInput = document.querySelector("#username");
 const passwordInput = document.querySelector("#password");
 const loginBtn = document.querySelector("#loginBtn");
 const loginPage = document.querySelector(".login");
+const logoutDiv = document.querySelector(".logout")
 
 //Registrera
 const registerBtn = document.querySelector("#registerBtn");
@@ -202,11 +204,6 @@ function sortByRating(books, sortOrder) {
   populateList(books);
 };
 
-// Lyssnare på knappar för sortering
-// sortTitleBtn.addEventListener('click', sortByTitle);
-// sortAuthorBtn.addEventListener('click', sortByAuthor);
-// sortRatingBtn.addEventListener('click', sortByRating);
-
 //----------------slut sortering --------------------------
 
 //Funktion för att hämta böcker
@@ -349,7 +346,10 @@ let login = async (info) => {
 function logOut() {
   let logOutBtn = document.createElement("button");
   logOutBtn.innerText = "Logga ut";
-  document.querySelector("header").append(logOutBtn);
+  logOutBtn.classList.add("logoutBtn");
+  logoutDiv.classList.remove("hidden");
+  logoutDiv.append(logOutBtn);
+  
 
   logOutBtn.addEventListener("click", () => {
     sessionStorage.removeItem("token");

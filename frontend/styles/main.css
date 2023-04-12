@@ -1,0 +1,174 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #F2E5D0;
+}
+
+.main-content {
+    background-color: #F3EDE9;
+    height: 70vh;
+    width: 82%;
+    border-radius: 60px;
+    box-shadow: 0 0 30px 1px #dfd0b8;
+    position: relative;
+    left: 200px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* ------------------- Global ------------------- */
+h1, h2 {
+    text-align: center;
+    margin-top: 0;
+}
+header {
+    background-color: #F2E5D0;
+  height: 150px;
+}
+
+.hidden {
+    display: none;
+}
+
+button,
+.registerBtn,
+.loginBtn {
+    background-color: var(--main-button-color);
+}
+li {
+    list-style: none;
+}
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+ 
+ /* 
+  a {
+    text-decoration: none;
+    color: #333;
+  } */
+
+
+/* ------------------- SCROLLBAR ------------------- */
+
+  .main-content::-webkit-scrollbar {
+    width: 7px;
+    height: 80%;
+  }
+  
+  .main-content::-webkit-scrollbar-track {
+    background: transparent;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+  
+  .main-content::-webkit-scrollbar-thumb {
+    background-color: #ce6565;
+    border-radius: 10px;
+  }
+
+  .main-content::-webkit-scrollbar-thumb:hover {
+    background: #905050; 
+  }
+
+/* ------------------- NAVBAR ------------------- */
+  .navbar {
+    background-color: #F2E5D0;
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* float: left; */
+  }
+  .navbar ul {
+    position: absolute;
+    left: 0;
+    top: 160px;
+  }
+  .navbar li {
+    list-style: none;
+    width: 100px;
+    height: 80px;
+    margin: 5px;
+    background-color: #cd863f5e;
+    border-radius: 6px;
+    margin-left: 20px;
+    margin-top: 2px;
+}
+.navSpan {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;  
+  }
+  
+  /* ------------------- LOGIN/LOGOUT ------------------- */
+  .loginOrRegister {
+    position: relative;
+    top: 750px;
+    margin:10px;
+  }
+  .loginDiv input,
+  .registerDiv input,
+  .loginDiv label,
+  .registerDiv label,
+  .loginDiv button,
+  .registerDiv button  {
+    margin-top: 5px;
+  }
+ .logout {
+    position: relative;
+    top: 750px;
+    margin: 50px;
+ }
+ .logout i {
+    font-size: 20px;
+    transform: rotate(180deg);
+    margin-right: 5px;
+ }
+ /* ------------------- Main-content ------------------- */
+
+ .bookShelf {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+ }
+ .bookShelf > div {
+    width: 250px;
+    height: 500px;
+ }
+ .bookShelf > div img {
+    width: 150px;
+    height: 200px;
+ }
+    
+    /* ------------------- TABELL - reviews -------------------*/
+    
+    table, tbody, th {
+      border: 1px solid black;
+    }
+  
+  /* ------------------- RATING-section ------------------- */
+  .ratings {
+    display: flex;
+  }
+  .ratings input {
+    display: block;
+  }
+  .ratings label {
+    text-align: center;
+  }
+
+
+/* ------------------- FOOTER -------------------*/
+  footer {
+    background-color: #F2E5D0;
+    height: 150px;
+}

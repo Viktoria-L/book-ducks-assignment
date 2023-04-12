@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Ducks</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/main.css">
     <!-- SCRIPTS -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://kit.fontawesome.com/f43b64805c.js" crossorigin="anonymous"></script>
@@ -14,12 +14,11 @@
 <body>
     <header>
        <h1>Book Ducks</h1><h2>~ Insert slogan ~</h2>
-       <nav>
-        <a href="index.html">Hem</a>
-        <a href="profile.html">Profilsida</a>
-        </nav>
-    </header>
-    <main>
+       <nav class="navbar">
+        <ul class="navLinks">
+            <li><a href="index.html"><span class="navSpan"><i class="fa-solid fa-home"></i>Hem</span></a></li>
+            <li><a href="profile.html"><span class="navSpan"><i class="fa-solid fa-user"></i>Profilsida</span></a></li>
+        </ul>
         <div class="loginOrRegister">
             <div class="loginDiv">
                 <div class="login">
@@ -49,6 +48,10 @@
             </div>
             
         </div>
+        <div class="logout hidden"><i class="fa-solid fa-arrow-right-from-bracket"></i></div>
+        </nav>
+    </header>
+    <main>
         <div class="main-content">
             <div class="welcomeMessage"></div>
 

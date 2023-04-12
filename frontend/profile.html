@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Ducks - Profil</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/main.css">
     <!-- SCRIPTS -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://kit.fontawesome.com/f43b64805c.js" crossorigin="anonymous"></script>
@@ -18,37 +18,40 @@
             <a href="index.html">Hem</a>
             <a href="profile.html">Profilsida</a>
             </nav>
+            <div class="loginOrRegister">
+                <div class="loginDiv">
+                    <div class="login">
+                        <label for="username">Användarnamn
+                            <input type="text" name="username" id="username">
+                        </label>
+                        <label for="password">Lösenord
+                            <input type="password" name="password" id="password">
+                        </label>
+                    </div>
+                        
+                    
+                    <div class="hidden" id="registerDiv">
+                        <label for="username">Användarnamn
+                            <input type="text" name="username" id="regUsername">
+                        </label>
+                        <label for="email">Email
+                            <input type="email" name="email" id="regEmail">
+                        </label>
+                        <label for="password">Lösenord
+                            <input type="password" name="password" id="regPassword">
+                        </label>
+            
+                    </div>
+                     <button type="submit" id="loginBtn">Logga in</button>
+                        <button id="registerBtn">Registrera dig</button>  
+                </div>
+                
+            </div>
+        <div class="logout hidden"><i class="fa-solid fa-arrow-right-from-bracket"></i></div>
+
     </header>
     <main>
-        <div class="loginOrRegister">
-            <div class="loginDiv">
-                <div class="login">
-                    <label for="username">Användarnamn
-                        <input type="text" name="username" id="username">
-                    </label>
-                    <label for="password">Lösenord
-                        <input type="password" name="password" id="password">
-                    </label>
-                </div>
-                    
-                
-                <div class="hidden" id="registerDiv">
-                    <label for="username">Användarnamn
-                        <input type="text" name="username" id="regUsername">
-                    </label>
-                    <label for="email">Email
-                        <input type="email" name="email" id="regEmail">
-                    </label>
-                    <label for="password">Lösenord
-                        <input type="password" name="password" id="regPassword">
-                    </label>
         
-                </div>
-                 <button type="submit" id="loginBtn">Logga in</button>
-                    <button id="registerBtn">Registrera dig</button>  
-            </div>
-            
-        </div>
         <div class="main-content">
             <div class="welcomeMessage"></div>
 
