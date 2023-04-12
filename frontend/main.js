@@ -9,6 +9,8 @@ const bookListTBody = document.querySelector("#book-list");
 const titleHeader = document.getElementById("titleHeader");
 const authorHeader = document.getElementById("authorHeader");
 const ratingHeader = document.getElementById("ratingHeader");
+let sortOrder = "asc";
+
 
 //Logga in
 const usernameInput = document.querySelector("#username");
@@ -105,25 +107,24 @@ let renderProfile = async () => {
     mySavedBooks.innerHTML += `<p>${book.title}</p>`;
   });
   reviews.forEach((review) => {
-    addReviewedBooks(review);
+    // addReviewedBooks(review);
+    sortByTitle(reviews, sortOrder);
   });
 
   titleHeader.addEventListener("click", () => {
-    const sortedBooks = sortByTitle(reviews);
-    addReviewedBooks(sortedBooks);
+    sortOrder = sortOrder === "asc" ? "desc" : "asc";
+    sortByTitle(reviews, sortOrder);  
     console.log("Du klicka på title");
   });
   authorHeader.addEventListener("click", () => {
-    const sortedBooks = sortByAuthor(reviews);
-    addReviewedBooks(sortedBooks);
-
-    console.log("Du klicka på authir");
+    sortOrder = sortOrder === "asc" ? "desc" : "asc";
+    sortByAuthor(reviews, sortOrder);
+     console.log("Du klicka på author");
   });
   ratingHeader.addEventListener("click", () => {
-    const sortedBooks = sortByRating(reviews);
-    addReviewedBooks(sortedBooks);
-
-    console.log("Du klicka på rating", sortedBooks);
+    sortOrder = sortOrder === "asc" ? "desc" : "asc";
+    sortByRating(reviews, sortOrder);
+    console.log("Du klicka på rating");
   });
 };
 
@@ -135,7 +136,6 @@ function populateList(books) {
   });
 }
 
-//NÅT är fel på rad 149, det som skickas in har inte den book.book
 //Funktion som skapar upp alla recenserade böcker i en tabell
 function addReviewedBooks(book) {
   const tr = document.createElement("tr");
@@ -159,15 +159,15 @@ function addReviewedBooks(book) {
 //----------------sortering --------------------------
 
 // Funktion för att sortera böcker efter titel
-function sortByTitle(books) {
+function sortByTitle(books, sortOrder) {
   books.sort((a, b) => {
     const titleA = a.book.title.toUpperCase();
     const titleB = b.book.title.toUpperCase();
     if (titleA < titleB) {
-      return -1;
+      return sortOrder === "asc" ? -1 : 1;
     }
     if (titleA > titleB) {
-      return 1;
+      return sortOrder === "asc" ? 1 : -1;
     }
     return 0;
   });
@@ -175,15 +175,15 @@ function sortByTitle(books) {
 }
 
 // Funktion för att sortera böcker efter författare
-function sortByAuthor(books) {
+function sortByAuthor(books, sortOrder) {
   books.sort((a, b) => {
     const authorA = a.book.author.toUpperCase();
     const authorB = b.book.author.toUpperCase();
     if (authorA < authorB) {
-      return -1;
+      return sortOrder === "asc" ? -1 : 1;
     }
     if (authorA > authorB) {
-      return 1;
+      return sortOrder === "asc" ? 1 : -1;
     }
     return 0;
   });
@@ -191,10 +191,16 @@ function sortByAuthor(books) {
 }
 
 // Funktion för att sortera böcker efter betyg
-function sortByRating(books) {
-  books.sort((a, b) => b.book.averageRating - a.book.averageRating);
+function sortByRating(books, sortOrder) {
+  books.sort((a, b) => {
+    if (sortOrder === "asc") {
+      return a.book.averageRating - b.book.averageRating;
+    } else {
+      return b.book.averageRating - a.book.averageRating;
+    }
+  });
   populateList(books);
-}
+};
 
 // Lyssnare på knappar för sortering
 // sortTitleBtn.addEventListener('click', sortByTitle);
