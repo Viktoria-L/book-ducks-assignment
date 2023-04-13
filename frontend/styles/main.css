@@ -8,7 +8,7 @@ body {
     background-color: #F3EDE9;
     height: 70vh;
     width: 82%;
-    border-radius: 60px;
+    border-radius: 50px;
     box-shadow: 0 0 30px 1px #dfd0b8;
     position: relative;
     left: 200px;
@@ -103,8 +103,7 @@ li {
 }
 .navSpan {
     display:flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     height: 100%;  
   }
@@ -133,7 +132,24 @@ li {
     transform: rotate(180deg);
     margin-right: 5px;
  }
- /* ------------------- Main-content ------------------- */
+ /* ------------------- MAIN-CONTENT index ------------------- */
+ .welcomeMessage {
+  padding: 10px 0 0 30px;
+ }
+
+ .bookDisplay {
+  display: flex;
+  flex-direction: column;
+ }
+
+ .highestRatedBooks {
+  height: 300px;
+  width: 100%;
+  background: rgb(167, 142, 142);
+  position: sticky;
+  top: 0;
+  left: 0;
+ }
 
  .bookShelf {
     display: flex;
@@ -141,14 +157,21 @@ li {
     justify-content: space-around;
  }
  .bookShelf > div {
-    width: 250px;
-    height: 500px;
+  display: flex;
+  gap: 10px;
+  width: 350px;
+    
  }
  .bookShelf > div img {
     width: 150px;
     height: 200px;
+    border-radius: 6px;
  }
-    
+
+  /* ------------------- MAIN-CONTENT profile ------------------- */
+  
+
+
     /* ------------------- TABELL - reviews -------------------*/
     
     table, tbody, th {

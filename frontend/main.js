@@ -1,3 +1,6 @@
+import { funktionnamn } from "./modules/api.js";
+
+
 const loginOrRegister = document.querySelector(".loginOrRegister");
 const mainContent = document.querySelector(".main-content");
 const welcomeMsg = document.querySelector(".welcomeMessage");
