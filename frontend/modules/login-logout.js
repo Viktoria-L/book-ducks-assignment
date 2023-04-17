@@ -1,4 +1,4 @@
-const registerDiv = document.querySelector("#registerDiv");
+const registerDiv = document.querySelector(".registerDiv");
 const logoutDiv = document.querySelector(".logout");
 const loginPage = document.querySelector(".login");
 const loginOrRegister = document.querySelector(".loginOrRegister");
@@ -37,8 +37,9 @@ const welcomeMsg = document.querySelector(".welcomeMessage");
 // };
 
 
-//GÖR BÄTTRE FELMEDDELANDEN BEROENDE PÅ LOGin eller register, 
-//Lägg till en tredje parameter t.ex. typ login så ska den skriva detta 
+//Gör en modal kanske?
+//GÖR BÄTTRE FELMEDDELANDEN BEROENDE PÅ LOGin eller register,
+//Lägg till en tredje parameter t.ex. typ login så ska den skriva detta
 //ob samt ta bort de tidigare funktionerna
 export let registerOrLogin = async (info, url) => {
   await axios

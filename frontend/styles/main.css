@@ -1,21 +1,13 @@
+
 body {
     margin: 0;
     padding: 0;
-    background-color: #F2E5D0;
+    background-color: var(--main-bg-color);
 }
+/* * {
+  outline: solid 1px black;
+} */
 
-.main-content {
-    background-color: #F3EDE9;
-    height: 70vh;
-    width: 82%;
-    border-radius: 50px;
-    box-shadow: 0 0 30px 1px #dfd0b8;
-    position: relative;
-    left: 200px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-}
 
 /* ------------------- Global ------------------- */
 h1, h2 {
@@ -23,7 +15,6 @@ h1, h2 {
     margin-top: 0;
 }
 header {
-    background-color: #F2E5D0;
   height: 150px;
 }
 
@@ -56,63 +47,69 @@ li {
 
 /* ------------------- SCROLLBAR ------------------- */
 
-  .main-content::-webkit-scrollbar {
+  .bookShelf::-webkit-scrollbar {
     width: 7px;
     height: 80%;
   }
   
-  .main-content::-webkit-scrollbar-track {
+  .bookShelf::-webkit-scrollbar-track {
     background: transparent;
     margin-top: 60px;
     margin-bottom: 60px;
   }
   
-  .main-content::-webkit-scrollbar-thumb {
-    background-color: #ce6565;
+  .bookShelf::-webkit-scrollbar-thumb {
+    background-color: var(--main-bg-darker-color);
     border-radius: 10px;
   }
 
-  .main-content::-webkit-scrollbar-thumb:hover {
-    background: #905050; 
+  .bookShelf::-webkit-scrollbar-thumb:hover {
+    background: var(--main-bg-hover-color); 
   }
 
 /* ------------------- NAVBAR ------------------- */
   .navbar {
-    background-color: #F2E5D0;
-    width: 200px;
-    height: 100%;
-    position: fixed;
+    display: flex;
+    justify-content: center;
+    /* background-color: var(--main-bg-color); */
+    /* width: 200px;
+    height: 100%; */
+    /* position: fixed;
     top: 0;
-    left: 0;
+    left: 0; */
     /* float: left; */
   }
   .navbar ul {
-    position: absolute;
+    display: flex; 
+        /* position: absolute;
     left: 0;
-    top: 160px;
+    top: 350px; */
   }
   .navbar li {
     list-style: none;
-    width: 100px;
-    height: 80px;
+    /* width: 100px;
+    height: 80px; */
     margin: 5px;
-    background-color: #cd863f5e;
+    background-color: var(--main-content-bg);
     border-radius: 6px;
-    margin-left: 20px;
-    margin-top: 2px;
+    /* margin-left: 20px;
+    margin-top: 2px; */
 }
 .navSpan {
-    display:flex;
+    /* display:flex;
     justify-content: space-around;
-    align-items: center;
-    height: 100%;  
+    align-items: center; */
+    /* height: 100%;   */
   }
   
   /* ------------------- LOGIN/LOGOUT ------------------- */
+
   .loginOrRegister {
-    position: relative;
-    top: 750px;
-    margin:10px;
+    width: 40%;
+    height: 300px;
+    padding-inline-start: 50px;
+    padding-top: 50px;
+
   }
   .loginDiv input,
   .registerDiv input,
@@ -132,29 +129,69 @@ li {
     transform: rotate(180deg);
     margin-right: 5px;
  }
- /* ------------------- MAIN-CONTENT index ------------------- */
+ .loginDiv div {
+  display:none;
+ }
+ .loginDiv div:target {
+  display: block;
+ }
+
+ .login,
+ .registerDiv {
+  width: 200px;
+  
+ }
+
  .welcomeMessage {
   padding: 10px 0 0 30px;
  }
-
- .bookDisplay {
+ /* ------------------- MAIN-CONTENT index ------------------- */
+ .main-content {
+  margin: 0 100px;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  background-color: var(--main-content-bg);
+  height: 75vh;
+  border-radius: 50px;
+  box-shadow: 0 0 30px 1px var(--main-content-shadow-color);
+  /* position: relative;
+  left: 200px; */
+  overflow-y: hidden;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+ }
+
+.welcome-content {
+  background-color: var(--main-content-bg);
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-around; */
+  /* position: sticky; 
+  top: 0;
+  left: 0; */
+  height: 300px;
+}
+ .bookDisplay {
+display: flex;
+flex-direction: column;
  }
 
  .highestRatedBooks {
-  height: 300px;
-  width: 100%;
-  background: rgb(167, 142, 142);
-  position: sticky;
-  top: 0;
-  left: 0;
+  width: 60%;
+  /* background: rgba(167, 142, 142, 0.299); */
  }
 
  .bookShelf {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  padding: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+   height: 600px;
+   overflow-y: scroll;
+   overflow-x: hidden;
+   scroll-behavior: smooth;
+
  }
  .bookShelf > div {
   display: flex;
@@ -167,6 +204,85 @@ li {
     height: 200px;
     border-radius: 6px;
  }
+
+ /* ------ BOKHYLLAN ------ */
+ .book {
+  position: absolute;
+  bottom: -10px;
+  left: 75px;
+  width: 100px;
+  height: 150px;
+  background-color: black;
+}
+.book:nth-child(2){
+  left: 250px;
+}
+.book:nth-child(3){
+ left: 425px; 
+}
+
+.shelf {
+  position: relative;
+  width: 600px;
+  border-bottom: 13px solid #e4b78b;
+  text-align: center;
+  padding: 0 27px;
+  margin: 200px auto;
+  background: transparent;
+}
+
+.shelf:after {
+  content: "";
+  position: absolute;
+  bottom: -13px;
+  left: 34px;
+  height: 10px;
+  background: transparent;
+  -webkit-transform: perspective( 150 ) rotateX( -25deg );
+  -moz-transform: perspective( 150 ) rotateX( -25deg );
+  -ms-transform: perspective( 150 ) rotateX( -25deg );
+  transform: perspective( 150 ) rotateX( -25deg );
+  right: 34px;
+  box-shadow: 0 0 17px 5px rgb(217, 200, 167);
+  z-index: -1;
+}
+
+.shelf > div {
+  border-bottom: 23px solid #CD853F;
+  position: relative;
+  z-index: 1;
+}
+
+.shelf > div:before {
+  content: '';
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0 0 23px 27px;
+  border-color: transparent transparent #CD853F transparent;
+  position: absolute;
+  bottom: -23px;
+  left: -27px;
+  z-index: 2;
+  -webkit-transform:rotate(360deg);
+  -moz-transform:rotate(360deg);
+  transform:rotate(360deg);
+}
+    
+.shelf > div:after {
+  content: '';
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 23px 0 0 27px;
+  border-color: transparent transparent transparent #CD853F;
+  position: absolute;
+  bottom: -23px;
+  right: -27px;
+  z-index: 2;
+}
+
+
 
   /* ------------------- MAIN-CONTENT profile ------------------- */
   

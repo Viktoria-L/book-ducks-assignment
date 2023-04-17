@@ -1,11 +1,9 @@
 :root {
     --main-bg-color: #F2E5D0;
+    --main-bg-darker-color: hsl(37, 57%, 68%);
+    --main-bg-hover-color: hsl(37, 57%, 28%);
     --main-content-bg: #F3EDE9;
     --main-text-color: #000000;
     --main-content-shadow-color: #dfd0b8;
-    --main-button-color: #a71941;
-    --nav-bar-items: ;
-    --shelf: ;
-    --shelf-div: ;
-    --a-link-text-color: ;
+    --main-button-color: #FCA72D;
 }

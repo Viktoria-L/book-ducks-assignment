@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Ducks</title>
+    <link rel="stylesheet" href="./styles/variables.css">
     <link rel="stylesheet" href="./styles/main.css">
     <!-- SCRIPTS -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -19,43 +20,62 @@
             <li><a href="index.html"><span class="navSpan"><i class="fa-solid fa-home"></i>Hem</span></a></li>
             <li><a href="profile.html"><span class="navSpan"><i class="fa-solid fa-user"></i>Profilsida</span></a></li>
         </ul>
-        <div class="loginOrRegister">
-            <div class="loginDiv">
-                <div class="login">
-                    <label for="username">Användarnamn
-                        <input type="text" name="username" id="username">
-                    </label>
-                    <label for="password">Lösenord
-                        <input type="password" name="password" id="password">
-                    </label>
-                </div>
-                    
-                
-                <div class="hidden" id="registerDiv">
-                    <label for="username">Användarnamn
-                        <input type="text" name="username" id="regUsername">
-                    </label>
-                    <label for="email">Email
-                        <input type="email" name="email" id="regEmail">
-                    </label>
-                    <label for="password">Lösenord
-                        <input type="password" name="password" id="regPassword">
-                    </label>
         
-                </div>
-                 <button type="submit" id="loginBtn">Logga in</button>
-                    <button id="registerBtn">Registrera dig</button>  
-            </div>
-            
-        </div>
-        <div class="welcomeMessage"></div>
         <div class="logout hidden"><i class="fa-solid fa-arrow-right-from-bracket"></i></div>
         </nav>
     </header>
     <main>
         <div class="main-content">
+           
+           
             <div class="bookDisplay">
-                <div class="highestRatedBooks"></div>
+                <div class="welcome-content">
+                    <div class="loginOrRegister">
+                        <div class="loginDiv">
+                            <a href="#loginLink">Log in</a>
+                            <a href="#registerLink">Register</a>
+            
+                            <div class="login" id="loginLink">
+                                <label for="username">Användarnamn
+                                    <input type="text" name="username" id="username">
+                                </label>
+                                <label for="password">Lösenord
+                                    <input type="password" name="password" id="password">
+                                </label>
+                                <button type="submit" id="loginBtn">Logga in</button>
+                            </div>
+                                
+                            
+                            <div class="registerDiv" id="registerLink">
+                                <label for="username">Användarnamn
+                                    <input type="text" name="username" id="regUsername">
+                                </label>
+                                <label for="email">Email
+                                    <input type="email" name="email" id="regEmail">
+                                </label>
+                                <label for="password">Lösenord
+                                    <input type="password" name="password" id="regPassword">
+                                </label>
+                                <button id="registerBtn">Registrera dig</button>          
+                            </div>
+                        </div>
+                        <div class="welcomeMessage"></div>
+                    </div>
+                    <div class="highestRatedBooks">
+                        <div class="shelf">
+        
+                            <div>
+                                <div class="booksOnShelf">
+                                    <div class="book"></div>
+                                    <div class="book"></div>
+                                    <div class="book"></div>
+                                </div>
+                        </div>
+                        </div>
+
+
+                    </div>
+                </div>
                 <div class="bookShelf"></div>
             </div>
         </div>
