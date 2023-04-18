@@ -14,21 +14,31 @@ body {
 h1, h2 {
     text-align: center;
     margin-top: 0;
+    margin-bottom: 0;
 }
 h1 {
-  font-family: 'Bangers', cursive;
+  font-family: 'Rancho', cursive;
+  font-size: 54px;
 }
-h3, h4 {
+h3 {
+  margin: 0;
+  font-size: 18px;
+}
+h4 {
   margin: 0;
   font-size: 16px;
 }
+.ratingDiv h4  {
+  margin-bottom: 4px;
+}
 header {
   height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.hidden {
-    display: none;
-}
+
 
 .registerBtn,
 .loginBtn {
@@ -39,19 +49,27 @@ header {
 }
 .buttonImg button {
   position: absolute;
-  left: -5px;
-  top: -8px;
+  left: -7px;
+  top: -10px;
   background-color: var(--main-bg-color);
   border-radius: 40%;
   border: none;
   padding: 6px 8px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 18px;
 }
 .buttonImg button i {
   color: var(--main-bg-darker-color)
+}
+.buttonImg button:hover {
+  /* border: 2px solid var(--main-text-color); */
+  box-shadow: 0 0 6px 1px var(--main-bg-hover-color);
+  transform: scale(1.1);
+}
+.buttonImg button i:hover {
   
 }
+
 
 li {
     list-style: none;
@@ -66,25 +84,24 @@ li {
     margin: 0;
   }
   
- 
- /* 
+
   a {
     text-decoration: none;
-    color: #333;
-  } */
+    color: var(--main-text-color);
+  } 
 
 
-/* ------------------- SCROLLBAR ------------------- */
+/* ------------------- SCROLLBAR INDEX ------------------- */
 
   .bookShelf::-webkit-scrollbar {
     width: 7px;
-    height: 80%;
+    height: 100%;
   }
   
   .bookShelf::-webkit-scrollbar-track {
     background: transparent;
-    margin-top: 60px;
-    margin-bottom: 60px;
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
   
   .bookShelf::-webkit-scrollbar-thumb {
@@ -99,16 +116,10 @@ li {
 /* ------------------- NAVBAR ------------------- */
   .navbar {
     display: flex;
-    justify-content: space-around;
-    /* height: 50px; */
-  
-    /* background-color: var(--main-bg-color); */
-    /* width: 200px;
-    height: 100%; */
-    /* position: fixed;
-    top: 0;
-    left: 0; */
-    /* float: left; */
+    justify-content: space-between;
+    margin-left: 125px;
+    margin-right: 125px;
+    font-weight: 700;
   }
   .navbar ul {
     display: flex; 
@@ -121,17 +132,15 @@ li {
     /* width: 100px;
     height: 80px; */
     margin: 5px;
-    background-color: var(--main-content-bg);
-    border-radius: 6px;
+    /* background-color: var(--main-content-bg);
+    border-radius: 6px; */
     /* margin-left: 20px;
     margin-top: 2px; */
 }
 
-.navSpan {
-    /* display:flex;
-    justify-content: space-around;
-    align-items: center; */
-    /* height: 100%;   */
+  .navSpan i {
+    margin-right: 5px;
+    font-size: 18px;
   }
   
   /* ------------------- LOGIN/LOGOUT ------------------- */
@@ -152,18 +161,19 @@ li {
     margin-top: 5px;
   }
  .logout {
-    text-align: center;
+    display: flex;
  }
  .logout i {
     font-size: 18px;
-    margin-left: 10px;
-    vertical-align: text-top;
+    margin-left: 2px;
+    align-self: center;
  }
  .logoutBtn {
   background-color: transparent;
   cursor: pointer;
   font-family: 'Gudea', sans-serif;
   font-weight: 700;
+  font-size: 16px;
   border: none;
  }
  .loginDiv div {
@@ -181,6 +191,9 @@ li {
  .welcomeMessage {
   padding: 10px 0 0 30px;
  }
+ .welcomeMessage p {
+  margin: 0;
+ }
  /* ------------------- MAIN-CONTENT index ------------------- */
  .main-content {
   margin: 0 100px;
@@ -191,8 +204,6 @@ li {
   height: 75vh;
   border-radius: 40px;
   box-shadow: 0 0 30px 1px var(--main-content-shadow-color);
-  /* position: relative;
-  left: 200px; */
   overflow-y: hidden;
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -202,10 +213,6 @@ li {
   background-color: var(--main-content-bg);
   display: flex;
   flex-direction: row;
-  /* justify-content: space-around; */
-  /* position: sticky; 
-  top: 0;
-  left: 0; */
   height: 300px;
   border-bottom: 2px double var(--main-bg-darker-color);
 }
@@ -216,14 +223,25 @@ li {
 
  .highestRatedBooks {
   width: 80%;
-  /* background: rgba(167, 142, 142, 0.299); */
+ }
+ .heading {
+  text-align: center;
+  padding: 20px;
+ }
+ .heading h2 {
+  color: var(--main-bg-darker-color);
+  /* text-shadow: var(--main-content-shadow-color) 1px 0 10px; */
+  text-shadow: -1px 0 rgba(0, 0, 0, 0.515), 0 1px rgba(0, 0, 0, 0.418), 1px 0 rgba(0, 0, 0, 0.44), 0 -1px rgba(0, 0, 0, 0.48);
+  font-family: 'Rancho', cursive;
+  font-size: 40px;
  }
 
  .bookShelf {
   padding: 20px 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  gap: 20px;
+  justify-content: space-evenly;
    height: 600px;
    overflow-y: scroll;
    overflow-x: hidden;
@@ -234,7 +252,9 @@ li {
   display: flex;
   gap: 10px;
   width: 375px;
-  height: 350px;   
+  height: 320px;
+  border-bottom: 2px solid var(--main-bg-color);
+     
 }
  .bookShelf > div img {
     width: 150px;
@@ -243,7 +263,7 @@ li {
  }
 
  .bookInfoDiv ul{
-  height: 90%;
+  /* height: 85%; */
   display: flex;
   gap: 20px;
   flex-direction: column;
@@ -264,6 +284,7 @@ li {
   width: 90px;
   height: 125px;
   background-color: black;
+  box-shadow: 0 0 10px 1px hsla(0, 0%, 0%, 50%);
 }
 .book:nth-child(2){
   left: 150px;
@@ -278,7 +299,7 @@ li {
   border-bottom: 13px solid #e4b78b;
   text-align: center;
   padding: 0 27px;
-  margin: 200px auto;
+  margin: 150px auto;
   background: transparent;
 }
 
@@ -333,17 +354,162 @@ li {
   z-index: 2;
 }
 
-
-
   /* ------------------- MAIN-CONTENT profile ------------------- */
   
+  .main-profile-content {
+    margin: 0 100px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: var(--main-content-bg);
+    height: 75vh;
+    border-radius: 40px;
+    box-shadow: 0 0 30px 1px var(--main-content-shadow-color);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;  
+ }
+.profileInfoDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+
+}
+.profile-one {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding-bottom: 10px;
+  width: 100%;
+}
+.profile-one .welcomeMessage {
+  align-items: center;
+}
+.userInfo {
+  margin-right: 20px;
+  text-align: right;
+}
+
+.profile-two {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+.profile-two h3 {
+  margin-left: 20px;
+}
+.mySavedBooks {
+  width: 100%;
+}
+.savedBooksDiv {
+  display: flex;
+  background-color: var(--main-bg-color); 
+  margin: 10px;
+  justify-content: flex-start;
+  border-radius: 6px;
+  overflow-y: hidden;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+.savedBookDiv {
+  width: 150px;
+  margin: 10px;
+  padding: 10px;
+  background-color: var(--main-content-bg);
+  border-radius: 6px;
+  text-align: center;
+}
+.savedTitle {
+  font-size: 14px;
+}
+.myRatedBooks {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+/* ------------------- SCROLLBAR MAIN PROFILE ------------------- */
+
+.main-profile-content::-webkit-scrollbar {
+  width: 7px;
+  height: 100%;
+}
+
+.main-profile-content::-webkit-scrollbar-track {
+  background: transparent;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.main-profile-content::-webkit-scrollbar-thumb {
+  background-color: var(--main-bg-darker-color);
+  border-radius: 10px;
+}
+
+.main-profile-content::-webkit-scrollbar-thumb:hover {
+  background: var(--main-bg-hover-color); 
+}
+
+/* ------------------- SCROLLBAR SAVEDBOOKS ------------------- */
+
+.savedBooksDiv::-webkit-scrollbar {
+  width: 100%;
+  height: 7px;
+}
+
+.savedBooksDiv::-webkit-scrollbar-track {
+  background: transparent;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.savedBooksDiv::-webkit-scrollbar-thumb {
+  background-color: var(--main-bg-darker-color);
+  border-radius: 10px;
+}
+
+.savedBooksDiv::-webkit-scrollbar-thumb:hover {
+  background: var(--main-bg-hover-color); 
+}
 
 
-    /* ------------------- TABELL - reviews -------------------*/
+  /* ------------------- TABELL - reviews -------------------*/
     
-    table, tbody, th {
-      border: 1px solid black;
+table, tbody, th {
+      border-radius: 6px;
     }
+table {
+  border: 2px solid var(--main-bg-darker-color);
+}
+.ratingTable {
+  background-color: var(--main-bg-color);
+    width: 80%;
+    align-self: center;
+    margin: 10px;
+ }
+ th {
+  background-color: var(--main-bg-darker-color);
+  padding: 8px;
+  cursor: pointer;
+ }
+ th .fa-solid {
+  transform: rotate(90deg);
+  opacity: 0.75;
+  font-size: 12px;
+ }
+ th:hover:not(:nth-child(1)) {
+  background-color: var(--main-bg-color);
+ }
+ td img {
+  width: 96px;
+  height: 124px;
+ }
+ tr:nth-child(odd) {
+  background-color: var(--main-content-bg);
+ }
+
   
   /* ------------------- RATING-section ------------------- */
   .ratings {
@@ -351,165 +517,50 @@ li {
   }
   .ratings input {
     display: block;
+    accent-color: var(--main-text-color);
+    
   }
+ 
   .ratings label {
     text-align: center;
   }
+  
+  .ratings input[type="radio"] {
+    /* display: none; */
+  }
 
-  /* .ratings {
-    display: inline-block;
-    position: relative;
-    height: 35px;
-    width: 175px;
-    margin: 0 auto;
-    margin-top: 20px;
-  }
-  
-  .ratings input {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-  }
-  
   .ratings label {
     display: inline-block;
-    width: 35px;
-    height: 35px;
-    text-align: center;
-    line-height: 35px;
-    color: #ddd;
-    font-size: 1.5em;
-    cursor: pointer;
-    transition: all 0.2s ease-out;
-  }
-  
-  .ratings input:hover ~ label,
-  .ratings input:focus ~ label,
-  .ratings input:checked ~ label {
-    background-color: #ffc107;
-    color: #fff;
-  }
-  
-  .ratings input:hover + label,
-  .ratings input:focus + label,
-  .ratings input:checked + label {
-    background-color: #ffbf00;
-  }
-  
-  .ratings label:hover ~ label,
-  .ratings label:focus ~ label {
-    background-color: #ddd;
-    color: #fff;
-  }
-  
-  .ratings input:checked + label:hover ~ label,
-  .ratings input:checked + label:focus ~ label {
-    background-color: #ffbf00;
+    font-size: 14px;
+    /* border: 1px solid #444;
+    border-radius: 4px; */
   }
 
- */
+/* .ratings label:hover {
+  background-color: var(--main-bg-color);
+  transition: ease-out .10s;
+} */
 
- .ratings {
-  display: inline-block;
-  position: relative;
-  height: 50px;
-  width: 250px;
-  margin: 0 auto;
-  margin-top: 20px;
-}
-
-.ratings input {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-}
-
-.ratings label {
-  display: inline-block;
-  width: 25px;
-  height: 50px;
-  text-align: center;
-  line-height: 50px;
-  color: #ddd;
-  font-size: 2em;
-  cursor: pointer;
-  transition: all 0.2s ease-out;
-  position: absolute;
-  right: 0;
-}
-
-.ratings label:nth-child(1) {
-  right: 0;
-}
-
-.ratings label:nth-child(2) {
-  right: 30px;
-}
-
-.ratings label:nth-child(3) {
-  right: 60px;
-}
-
-.ratings label:nth-child(4) {
-  right: 90px;
-}
-
-.ratings label:nth-child(5) {
-  right: 120px;
-}
-
-.ratings label:nth-child(6) {
-  right: 150px;
-}
-
-.ratings label:nth-child(7) {
-  right: 180px;
-}
-
-.ratings label:nth-child(8) {
-  right: 210px;
-}
-
-.ratings label:nth-child(9) {
-  right: 240px;
-}
-
-.ratings label:nth-child(10) {
-  right: 270px;
-}
-
-.ratings input:hover ~ label,
-.ratings input:focus ~ label,
-.ratings input:checked ~ label {
-  background-color: #ffc107;
-  color: #fff;
-}
-
-.ratings input:hover + label,
-.ratings input:focus + label,
-.ratings input:checked + label {
-  background-color: #ffbf00;
-}
-
-.ratings label:hover ~ label,
-.ratings label:focus ~ label {
-  background-color: #ddd;
-  color: #fff;
-}
-
-.ratings input:checked + label:hover ~ label,
-.ratings input:checked + label:focus ~ label {
-  background-color: #ffbf00;
-}
-
-
-
+    .ratingDiv button {
+    margin-top: 5px;
+    padding: 2px 74px;
+    background-color: var(--main-bg-color);
+    border: 1px solid var(--main-bg-darker-color);
+    border-radius: 20px;
+    font-family: 'Gudea', sans-serif;
+    font-weight: 600;
+    box-shadow: 0 0 2px 1px rgb(227, 224, 224);
+  }
+  .ratingDiv button:hover {
+    background-color: var(--main-button-hover);
+  }
+  .ratings p {
+    margin: 0;
+  }
 
 /* ------------------- FOOTER -------------------*/
   footer {
-    background-color: #F2E5D0;
+    /* background-color: #F2E5D0; */
     height: 150px;
 }
 
@@ -526,13 +577,72 @@ li {
   .main-content {
     margin: 0 50px;
   }
+  .navbar {
+    margin-left: 75px;
+    margin-right: 75px;
+  }
 
 }
 
-/* För skärmstorlekar på 768px och mindre, dvs mobil */ 
-@media (max-width: 768px) {
+/* För skärmstorlekar på 800px och mindre, dvs mobil */ 
+@media (max-width: 800px) {
   .welcome-content {
     flex-direction: column;
+    align-items: center;
     margin-bottom: 30px;
+    height: 25%;
   }
+  .welcomeMessage {
+  text-align: center;
+  padding-left: 0;
+  }
+  .loginOrRegister {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 200px;
+    margin: 0;
+    padding: 0;
+  }
+  .highestRatedBooks {
+    display: none;
+  }
+  
+}
+
+/* För skärmstorlekar på 548px och mindre, dvs mobil */ 
+@media (max-width: 548px) {
+  .highestRatedBooks {
+    display: none;
+  }
+}
+
+/* För skärmstorlekar på 490px och mindre, dvs mobil */ 
+@media (max-width: 490px) {
+  .bookShelf {
+    height: 800px;
+  }
+  .bookShelf div {
+    flex-direction: column;
+    height: auto;
+    width: 310px;
+    margin-left: 5px;
+    padding-bottom: 5px;
+  }
+  .welcome-content {
+    width: 100%;
+    height: 100px;
+  }
+
+  .ratings {
+  display: block;
+  }
+  .navSpan span {
+    display: none;
+  }
+
+}
+
+.hidden {
+  display: none;
 }

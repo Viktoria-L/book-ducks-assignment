@@ -1,5 +1,6 @@
 import { onPageLoad } from "./modules/pageload.js";
-import { registerOrLogin } from "./modules/login-logout.js"
+import { registerOrLogin } from "./modules/login-logout.js";
+import { displayHighestRatedBooks } from "./modules/extra.js";
 
 const usernameInput = document.querySelector("#username");
 const passwordInput = document.querySelector("#password");

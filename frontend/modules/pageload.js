@@ -1,6 +1,7 @@
 import { getBooks } from "./api.js";
 import { renderProfile } from "./render.js";
 import { logOut } from "./login-logout.js";
+import { displayHighestRatedBooks } from "./extra.js";
 
 const loginOrRegister = document.querySelector(".loginOrRegister");
 const loginDiv = document.querySelector(".loginDiv");
@@ -14,9 +15,10 @@ export let onPageLoad = () => {
       if (sessionStorage.getItem("token")) {
         console.log("Ja, någon är inloggad");
         loginDiv.classList.add("hidden");
-        welcomeMsg.innerHTML = `Välkommen tillbaka, du är inloggad som ${sessionStorage.getItem(
+        welcomeMsg.innerHTML = `<h3>Välkommen tillbaka!</h3><p>Du är inloggad som ${sessionStorage.getItem(
           "userName"
-        )}`;
+        )}</p>`;
+        displayHighestRatedBooks();
         getBooks();
         logOut();
       } else {
@@ -25,6 +27,9 @@ export let onPageLoad = () => {
     } else if (location.pathname === "/frontend/profile.html") {
       if (sessionStorage.getItem("token")) {
         loginOrRegister.classList.add("hidden");
+        welcomeMsg.innerHTML = `<h3>Välkommen tillbaka!</h3><p>Du är inloggad som ${sessionStorage.getItem(
+          "userName"
+        )}</p>`;
         logOut();
         renderProfile();
       } else {

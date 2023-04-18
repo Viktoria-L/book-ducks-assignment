@@ -4,7 +4,7 @@ import { sortByTitle, sortByAuthor, sortByRating } from "./sort.js";
 
 const bookShelf = document.querySelector(".bookShelf");
 const userProfile = document.querySelector(".userInfo");
-const mySavedBooks = document.querySelector(".mySavedBooks");
+const mySavedBooks = document.querySelector(".savedBooksDiv");
 const myRatedBooks = document.querySelector(".myRatedBooks");
 const bookListTBody = document.querySelector("#book-list");
 const titleHeader = document.getElementById("titleHeader");
@@ -57,10 +57,12 @@ export let renderProfile = async () => {
     );
     console.log("me-response: ", response);
     let { username, email, saved_books, reviews } = response.data;
-    userProfile.innerHTML = `<h3>Användarnamn: ${username}</h3>
-    <h3>Email: ${email}</h3>`;
+    userProfile.innerHTML = `<h4>Användarnamn: ${username}</h4>
+    <h4>Email: ${email}</h4>`;
     saved_books.forEach((book) => {
-      mySavedBooks.innerHTML += `<p>${book.title}</p>`;
+      mySavedBooks.innerHTML += `<div class="savedBookDiv">
+      <img src="http://localhost:1337${book.imageUrl?.formats.thumbnail.url}"/>
+      <p class="savedTitle">${book.title}</p></div>`;
     });
     reviews.forEach((review) => {
       sortByTitle(reviews, sortOrder);

@@ -58,9 +58,9 @@ export async function ratingSection(element, bookId) {
       element.append(ratingDiv);
     }
   } else {
-    ratingDiv.innerHTML = `<h4>Logga in för att betygsätta boken!</h4>
-    `;
-    element.append(ratingDiv);
+    // ratingDiv.innerHTML = `<h4>Logga in för att betygsätta boken!</h4>
+    // `;
+    // element.append(ratingDiv);
   }
 }
 

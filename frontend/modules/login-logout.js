@@ -93,7 +93,7 @@ export let registerOrLogin = async (info, url) => {
 // ----------------- LOGIN SUCCESS MESSAGE ----------------- //
 export let loginSuccess = (data) => {
   loginDiv.classList.add("hidden");
-  welcomeMsg.innerHTML = `<p>Välkommen! <br>Du är inloggad som ${data.user.username}!</p><br>
+  welcomeMsg.innerHTML = `<h3>Välkommen!</h3> <br><p>Du är inloggad som ${data.user.username}!</p><br>
            `;
   window.location.href = "profile.html";
 };
@@ -101,7 +101,7 @@ export let loginSuccess = (data) => {
 // ----------------- LOGOUT ----------------- //
 export function logOut() {
   let logOutBtn = document.createElement("button");
-  logOutBtn.innerText = "Logga ut";
+  logOutBtn.innerHTML = `Logga ut <i class="fa-solid fa-arrow-right-from-bracket"></i>`;
   logOutBtn.classList.add("logoutBtn");
   logoutDiv.classList.remove("hidden");
   logoutDiv.prepend(logOutBtn);

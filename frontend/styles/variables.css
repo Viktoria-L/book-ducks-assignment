@@ -6,4 +6,6 @@
     --main-text-color: #000000;
     --main-content-shadow-color: #dfd0b8;
     --main-button-color: #FCA72D;
+    --main-button-hover: hsl(37, 57%, 68%);
+    
 }
