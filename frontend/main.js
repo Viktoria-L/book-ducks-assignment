@@ -19,29 +19,19 @@ onPageLoad();
 
 // --------------- REGISTER Btn --------------- //
 registerBtn.addEventListener("click", () => {
-  if (registerDiv.classList.contains("hidden")) {
-    registerDiv.classList.remove("hidden");
-    loginPage.classList.add("hidden");
-  } else {
     userInfo = {
       username: regUsername.value,
       email: regEmail.value,
       password: regPassword.value,
     };
     registerOrLogin(userInfo, registerUrl);
-  }
-});
+  });
 
 // --------------- LOGIN Btn --------------- //
 loginBtn.addEventListener("click", () => {
-  if (loginPage.classList.contains("hidden")) {
-    loginPage.classList.remove("hidden");
-    registerDiv.classList.add("hidden");
-  } else {
-    userInfo = {
+      userInfo = {
       identifier: usernameInput.value,
       password: passwordInput.value,
     };
-registerOrLogin(userInfo, loginUrl);
-  }
-});
+  registerOrLogin(userInfo, loginUrl);
+  });

@@ -21,17 +21,19 @@ export let renderBooks = (data) => {
         book.attributes;
       let bookDiv = document.createElement("div");
       bookDiv.className = `bookDiv${book.id}`;
-      bookDiv.innerHTML = `<div><img src="http://localhost:1337${
+      bookDiv.innerHTML = `<div class="buttonImg"><button id="save${book.id}"><i class="fa-solid fa-bookmark"></i></button>
+      <img src="http://localhost:1337${
         imageUrl?.data.attributes.url
       }"/></div>
-          <div><ul id="bookUl${book.id}">
-          <li>${title}</li>
-          <li>${author}</li>
-          <li>${pages}</li>
-          <li>${releaseDate}</li>
-          <li>${averageRating ? averageRating : "Inget betyg ännu"}</li> 
-          <button id="save${book.id}">Lägg till i "Att läsa"</button> 
-          </ul></div>`;
+          <div class="bookInfoDiv"><ul id="bookUl${book.id}">
+          <div class="bookInfo"><div class="titleAndAuthor">
+          <li><h3>${title}</h3></li>
+          <li class="italicLi">${author}</li>
+          </div><div class="pagesDateGrade">
+          <li>Antal sidor: ${pages}</li>
+          <li>Utgiven: ${releaseDate}</li>
+          <li>Betyg: ${averageRating ? averageRating : "Inget betyg ännu"}</li> 
+          </div></div></ul></div>`;
       bookShelf.append(bookDiv);
       const bookUl = document.getElementById(`bookUl${book.id}`);
       const saveBtn = document.getElementById(`save${book.id}`);

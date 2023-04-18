@@ -1,4 +1,5 @@
 const registerDiv = document.querySelector(".registerDiv");
+const loginDiv = document.querySelector(".loginDiv");
 const logoutDiv = document.querySelector(".logout");
 const loginPage = document.querySelector(".login");
 const loginOrRegister = document.querySelector(".loginOrRegister");
@@ -91,9 +92,10 @@ export let registerOrLogin = async (info, url) => {
 
 // ----------------- LOGIN SUCCESS MESSAGE ----------------- //
 export let loginSuccess = (data) => {
-  loginOrRegister.classList.add("hidden");
+  loginDiv.classList.add("hidden");
   welcomeMsg.innerHTML = `<p>Välkommen! <br>Du är inloggad som ${data.user.username}!</p><br>
            `;
+  window.location.href = "profile.html";
 };
 
 // ----------------- LOGOUT ----------------- //
@@ -102,7 +104,7 @@ export function logOut() {
   logOutBtn.innerText = "Logga ut";
   logOutBtn.classList.add("logoutBtn");
   logoutDiv.classList.remove("hidden");
-  logoutDiv.append(logOutBtn);
+  logoutDiv.prepend(logOutBtn);
 
   logOutBtn.addEventListener("click", () => {
     sessionStorage.clear();

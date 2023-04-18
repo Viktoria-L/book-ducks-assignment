@@ -3,6 +3,7 @@ import { renderProfile } from "./render.js";
 import { logOut } from "./login-logout.js";
 
 const loginOrRegister = document.querySelector(".loginOrRegister");
+const loginDiv = document.querySelector(".loginDiv");
 const welcomeMsg = document.querySelector(".welcomeMessage");
 const mySavedBooks = document.querySelector(".mySavedBooks");
 const myRatedBooks = document.querySelector(".myRatedBooks");
@@ -12,7 +13,7 @@ export let onPageLoad = () => {
     if (location.pathname === "/frontend/index.html") {
       if (sessionStorage.getItem("token")) {
         console.log("Ja, någon är inloggad");
-        loginOrRegister.classList.add("hidden");
+        loginDiv.classList.add("hidden");
         welcomeMsg.innerHTML = `Välkommen tillbaka, du är inloggad som ${sessionStorage.getItem(
           "userName"
         )}`;
