@@ -1,10 +1,7 @@
 import { messageModal } from "./extra.js";
 
-const registerDiv = document.querySelector(".registerDiv");
 const loginDiv = document.querySelector(".loginDiv");
 const logoutDiv = document.querySelector(".logout");
-const loginPage = document.querySelector(".login");
-const loginOrRegister = document.querySelector(".loginOrRegister");
 const welcomeMsg = document.querySelector(".welcomeMessage");
 
 // ----------------- REGISTER USER / LOGIN ----------------- //
@@ -23,8 +20,10 @@ export let registerOrLogin = async (info, url) => {
       logOut();
     })
     .catch((error) => {
-      messageModal("Något gick fel, försök igen!", error.message)
-      console.log("Något blev fel vid registreringen");
+      messageModal(
+        "Det gick inte att logga in, försök igen!",
+        error.name + " " + error.message
+      );
     });
 };
 

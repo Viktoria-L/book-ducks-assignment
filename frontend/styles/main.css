@@ -5,12 +5,8 @@ body {
     background-color: var(--main-bg-color);
     font-family: 'Gudea', sans-serif;
 }
-/* * {
-  outline: solid 1px black;
-} */
 
-
-/* ------------------- Global ------------------- */
+/* ------------------- Global - headings, buttons ------------------- */
 h1, h2 {
     text-align: center;
     margin-top: 0;
@@ -46,8 +42,6 @@ header {
   flex-direction: column;
   justify-content: space-between;
 }
-
-
 
 #registerBtn,
 #loginBtn {
@@ -112,8 +106,6 @@ header {
   transform: scale(1.1);
 }
 
-
-
 li {
     list-style: none;
 }
@@ -132,7 +124,6 @@ a {
     color: var(--main-text-color);
     font-weight: 600;
   } 
-
 
 
 /* ------------------- SCROLLBAR INDEX ------------------- */
@@ -167,15 +158,15 @@ a {
   }
   .navbar ul {
     display: flex; 
-        /* position: absolute;
-    left: 0;
-    top: 350px; */
   }
   .navbar li {
     list-style: none;
     margin: 5px;
 }
 
+.navLinks li:hover{
+  transform: scale(1.1);
+}
   .navSpan i {
     margin-right: 5px;
     font-size: 18px;
@@ -244,6 +235,9 @@ a {
     margin-left: 2px;
     align-self: center;
  }
+ .logout:hover {
+  transform: scale(1.1);
+ }
  .logoutBtn {
   background-color: transparent;
   cursor: pointer;
@@ -269,6 +263,9 @@ a {
  }
  .welcomeMessage:not(.profile-one .welcomeMessage){
   text-align: center;
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
  }
  .welcomeMessage p {
   margin: 0;
@@ -278,14 +275,12 @@ a {
   position: relative;
  }
  .main-content {
-  margin: 0 100px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   background-color: var(--main-content-bg);
   height: 75vh;
-  border-radius: 40px;
-  box-shadow: 0 0 30px 1px var(--main-content-shadow-color);
+  box-shadow: 0 0 15px 1px var(--main-content-shadow-color);
   overflow-y: hidden;
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -348,6 +343,7 @@ a {
   gap: 20px;
   flex-direction: column;
   justify-content: space-between;
+  width: 200px;
  }
  .bookInfo {
   height: 180px;
@@ -437,14 +433,12 @@ a {
   /* ------------------- MAIN-CONTENT profile ------------------- */
   
 .main-profile-content {
-    margin: 0 100px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     background-color: var(--main-content-bg);
     height: 75vh;
-    border-radius: 40px;
-    box-shadow: 0 0 30px 1px var(--main-content-shadow-color);
+    box-shadow: 0 0 15px 1px var(--main-content-shadow-color);
     overflow-x: hidden;
     overflow-y: scroll;
     scroll-behavior: smooth;  
@@ -605,32 +599,8 @@ table {
 
   
   /* ------------------- RATING-section ------------------- */
-  .ratings {
-    display: flex;
-  }
-  .ratings input {
-    display: block;
-    accent-color: var(--main-text-color);
-    
-  }
- 
-  .ratings label {
-    text-align: center;
-  }
-  
-  .ratings input[type="radio"] {
-    /* display: none; */
-  }
 
-  .ratings label {
-    display: inline-block;
-    font-size: 14px;
-    /* border: 1px solid #444;
-    border-radius: 4px; */
-  }
-
-
-    .ratingDiv button {
+.ratingDiv button {
     margin-top: 5px;
     padding: 2px 74px;
     background-color: var(--main-bg-color);
@@ -643,9 +613,42 @@ table {
   .ratingDiv button:hover {
     background-color: var(--main-button-hover);
   }
-  .ratings p {
+  .ratingsDiv p {
     margin: 0;
   }
+
+.ratings {
+    margin-top: 5px;
+    display: flex;
+    font-size:0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    background: linear-gradient(to right, var(--main-bg-color), var(--main-bg-darker-color), var(--main-bg-hover-color) )
+}
+.ratings input {
+    display: none
+}
+.ratings label {
+    display: flex;
+    width: 40px;
+    height: 20px;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    background: var(--main-content-bg);
+    color: #000;
+  cursor: pointer;
+}
+.ratings label {
+    transition: .3s;
+}
+.ratings input[type='radio']:hover~label,
+input[type='radio']:checked~label{
+    background: none;
+    color: #fff;
+}
+
   /* ----------- MESSAGE POP UP MODAL ---------- */
 
   .message-modal {
@@ -659,29 +662,29 @@ table {
     text-align: center;
     border-radius: 12px;
     z-index: 9999;
+    border: 2px solid var(--main-text-color)
   }
 
 /* ------------------- FOOTER -------------------*/
   footer {
-    /* background-color: #F2E5D0; */
+    position: relative;
+   text-align: center;
     height: 150px;
+}
+footer p {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+
 }
 
 /* ------------------- MEDIA QUERIES -------------- */
 
-/* För skärmstorlek på 1024px och uppåt */
-
-@media (min-width: 1024px) {
-
-}
-
 /* För skärmstorlekar på 1024px och mindre, dvs mobil */ 
 @media (max-width: 1024px) {
-  .main-content,
-  .main-profile-content {
-    margin: 0 50px;
-  }
-  .navbar {
+   .navbar {
     margin-left: 75px;
     margin-right: 75px;
   }
@@ -719,9 +722,6 @@ table {
   .welcomeMessage {
   padding-left: 20px;
   }
- 
- 
-  
 }
 
 /* För skärmstorlekar på 548px och mindre, dvs mobil */ 
@@ -757,7 +757,6 @@ table {
   }
   .welcome-content {
     width: 100%;
-    /* height: 100px; */
   }
   .loginOrRegister {
     padding-inline-start: 10px;
