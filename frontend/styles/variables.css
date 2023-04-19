@@ -3,9 +3,22 @@
     --main-bg-darker-color: hsl(37, 57%, 68%);
     --main-bg-hover-color: hsl(37, 57%, 28%);
     --main-content-bg: #F3EDE9;
+    --main-content-hover: hsl(24, 29%, 73%);
     --main-text-color: #000000;
     --main-content-shadow-color: #dfd0b8;
-    --main-button-color: #FCA72D;
+    --main-button-color: #F2E5D0;
     --main-button-hover: hsl(37, 57%, 68%);
-    
 }
+
+
+:purple {
+    --main-bg-color: #DED0E8;
+    --main-bg-darker-color: hsl(274, 37%, 57%);
+    --main-bg-hover-color: hsl(274, 37%, 27%);
+    --main-content-bg: #E8DCE5;
+    --main-content-hover: hsl(274, 20%, 72%);
+    --main-text-color: #000000;
+    --main-content-shadow-color: #c3b1d9;
+    --main-button-color: #DED0E8;
+    --main-button-hover: hsl(274, 37%, 57%);
+  }

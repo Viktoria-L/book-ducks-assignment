@@ -40,10 +40,24 @@ header {
 
 
 
-.registerBtn,
-.loginBtn {
-    background-color: var(--main-button-color);
+#registerBtn,
+#loginBtn {
+  margin-top: 10px;
+  padding: 2px 50px;
+  width: 100%;
+  background-color: var(--main-button-color);
+  border: 1px solid var(--main-bg-darker-color);
+  border-radius: 15px;
+  font-family: 'Gudea', sans-serif;
+  font-weight: 600;
+  box-shadow: 0 0 2px 1px rgb(227, 224, 224);
 }
+
+#registerBtn:hover,
+#loginBtn:hover {
+  background-color: var(--main-button-hover);
+}
+
 .buttonImg {
   position: relative;
 }
@@ -62,13 +76,33 @@ header {
   color: var(--main-bg-darker-color)
 }
 .buttonImg button:hover {
-  /* border: 2px solid var(--main-text-color); */
   box-shadow: 0 0 6px 1px var(--main-bg-hover-color);
   transform: scale(1.1);
 }
-.buttonImg button i:hover {
-  
+
+.bookmarkBtn {
+  position: relative;
 }
+.bookmarkBtn button {
+  position: absolute;
+  right: -17px;
+  top: -10px;
+  background-color: var(--main-bg-color);
+  border-radius: 40%;
+  border: none;
+  padding: 4px 6px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 0 3px 1px var(--main-bg-darker-color);
+}
+.bookmarkBtn button i {
+  color: var(--main-bg-darker-color)
+}
+.bookmarkBtn button:hover {
+  box-shadow: 0 0 6px 1px var(--main-bg-hover-color);
+  transform: scale(1.1);
+}
+
 
 
 li {
@@ -78,17 +112,17 @@ li {
   font-style: italic;
 }
 
-  ul {
+ul {
     list-style: none;
     padding: 0;
     margin: 0;
   }
   
-
-  a {
+a {
     text-decoration: none;
     color: var(--main-text-color);
   } 
+
 
 
 /* ------------------- SCROLLBAR INDEX ------------------- */
@@ -129,13 +163,7 @@ li {
   }
   .navbar li {
     list-style: none;
-    /* width: 100px;
-    height: 80px; */
     margin: 5px;
-    /* background-color: var(--main-content-bg);
-    border-radius: 6px; */
-    /* margin-left: 20px;
-    margin-top: 2px; */
 }
 
   .navSpan i {
@@ -145,20 +173,57 @@ li {
   
   /* ------------------- LOGIN/LOGOUT ------------------- */
 
-  .loginOrRegister {
+.loginOrRegister {
     width: 20%;
     height: 300px;
     padding-inline-start: 50px;
-    padding-top: 50px;
-
+    padding-top: 30px;
   }
-  .loginDiv input,
-  .registerDiv input,
-  .loginDiv label,
-  .registerDiv label,
-  .loginDiv button,
-  .registerDiv button  {
+.loginDiv {
+  border: 2px solid var(--main-bg-color);
+  border-radius: 10px;
+  min-width: 200px;
+}
+
+.linkDiv {
+  background-color: var(--main-bg-darker-color);
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 2px solid var(--main-bg-hover-color);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+.linkDiv span {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.linkDiv span:nth-child(1) {
+  border-right: 2px solid var(--main-bg-hover-color)
+}
+.linkDiv span:nth-child(1):hover {
+  background-color: var(--main-content-hover); 
+  border-top-left-radius: 10px;
+}
+.linkDiv span:nth-child(2):hover {
+  background-color: var(--main-content-hover); 
+  border-top-right-radius: 10px;
+}
+
+.loginDiv input,
+.registerDiv input,
+.loginDiv label,
+.registerDiv label,
+.loginDiv button,
+.registerDiv button  {
     margin-top: 5px;
+    display: block;
   }
  .logout {
     display: flex;
@@ -176,17 +241,17 @@ li {
   font-size: 16px;
   border: none;
  }
- .loginDiv div {
+ .loginDiv div:not(.linkDiv) {
   display:none;
  }
  .loginDiv div:target {
   display: block;
  }
-
- .login,
- .registerDiv {
-  width: 200px; 
- }
+ 
+.login,
+.registerDiv {
+  margin: 10px;  
+}
 
  .welcomeMessage {
   padding: 10px 0 0 30px;
@@ -195,6 +260,9 @@ li {
   margin: 0;
  }
  /* ------------------- MAIN-CONTENT index ------------------- */
+ main {
+  position: relative;
+ }
  .main-content {
   margin: 0 100px;
   display: flex;
@@ -263,7 +331,6 @@ li {
  }
 
  .bookInfoDiv ul{
-  /* height: 85%; */
   display: flex;
   gap: 20px;
   flex-direction: column;
@@ -283,7 +350,7 @@ li {
   left: 30px;
   width: 90px;
   height: 125px;
-  background-color: black;
+  background-color: var(--main-content-bg);
   box-shadow: 0 0 10px 1px hsla(0, 0%, 0%, 50%);
 }
 .book:nth-child(2){
@@ -356,7 +423,7 @@ li {
 
   /* ------------------- MAIN-CONTENT profile ------------------- */
   
-  .main-profile-content {
+.main-profile-content {
     margin: 0 100px;
     display: flex;
     flex-direction: column;
@@ -406,15 +473,18 @@ li {
 .savedBooksDiv {
   display: flex;
   background-color: var(--main-bg-color); 
-  margin: 10px;
+  margin: 10px 20px;
   justify-content: flex-start;
   border-radius: 6px;
   overflow-y: hidden;
   overflow-x: auto;
   scroll-behavior: smooth;
+  max-height: 315px;
 }
 .savedBookDiv {
-  width: 150px;
+  position: relative;
+  min-width: 150px;
+  max-width: 175px;
   margin: 10px;
   padding: 10px;
   background-color: var(--main-content-bg);
@@ -427,7 +497,9 @@ li {
 .myRatedBooks {
   display: flex;
   flex-direction: column;
-  
+}
+.titleAndAuthor h3 {
+  font-size: 16px;
 }
 
 /* ------------------- SCROLLBAR MAIN PROFILE ------------------- */
@@ -475,7 +547,7 @@ li {
 }
 
 
-  /* ------------------- TABELL - reviews -------------------*/
+  /* ------------------- TABLE - reviews -------------------*/
     
 table, tbody, th {
       border-radius: 6px;
@@ -485,9 +557,7 @@ table {
 }
 .ratingTable {
   background-color: var(--main-bg-color);
-    width: 80%;
-    align-self: center;
-    margin: 10px;
+    margin: 10px 20px;
  }
  th {
   background-color: var(--main-bg-darker-color);
@@ -536,17 +606,13 @@ table {
     border-radius: 4px; */
   }
 
-/* .ratings label:hover {
-  background-color: var(--main-bg-color);
-  transition: ease-out .10s;
-} */
 
     .ratingDiv button {
     margin-top: 5px;
     padding: 2px 74px;
     background-color: var(--main-bg-color);
     border: 1px solid var(--main-bg-darker-color);
-    border-radius: 20px;
+    border-radius: 15px;
     font-family: 'Gudea', sans-serif;
     font-weight: 600;
     box-shadow: 0 0 2px 1px rgb(227, 224, 224);
@@ -556,6 +622,20 @@ table {
   }
   .ratings p {
     margin: 0;
+  }
+  /* ----------- MESSAGE POP UP MODAL ---------- */
+
+  .message-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 25px;
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    text-align: center;
+    border-radius: 12px;
+    z-index: 9999;
   }
 
 /* ------------------- FOOTER -------------------*/
@@ -574,27 +654,20 @@ table {
 
 /* För skärmstorlekar på 1024px och mindre, dvs mobil */ 
 @media (max-width: 1024px) {
-  .main-content {
+  .main-content,
+  .main-profile-content {
     margin: 0 50px;
   }
   .navbar {
     margin-left: 75px;
     margin-right: 75px;
   }
-
 }
 
-/* För skärmstorlekar på 800px och mindre, dvs mobil */ 
-@media (max-width: 800px) {
-  .welcome-content {
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 30px;
-    height: 25%;
-  }
-  .welcomeMessage {
-  text-align: center;
-  padding-left: 0;
+/* För skärmstorlekar på 880px och mindre, dvs mobil */ 
+@media (max-width: 880px) {
+  .highestRatedBooks {
+    display: none;
   }
   .loginOrRegister {
     display: flex;
@@ -604,17 +677,36 @@ table {
     margin: 0;
     padding: 0;
   }
-  .highestRatedBooks {
-    display: none;
+  .welcome-content {
+    margin-top: 30px;
+    height: 250px;
   }
+  .profileInfoDiv {
+    margin-top: 30px;
+  }
+  .profile-one {
+    justify-content: center;
+  }
+}
+
+/* För skärmstorlekar på 800px och mindre, dvs mobil */ 
+@media (max-width: 800px) {
+  .welcome-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .welcomeMessage {
+  text-align: center;
+  padding-left: 0;
+  }
+ 
+ 
   
 }
 
 /* För skärmstorlekar på 548px och mindre, dvs mobil */ 
 @media (max-width: 548px) {
-  .highestRatedBooks {
-    display: none;
-  }
+  
 }
 
 /* För skärmstorlekar på 490px och mindre, dvs mobil */ 
@@ -631,7 +723,11 @@ table {
   }
   .welcome-content {
     width: 100%;
-    height: 100px;
+    /* height: 100px; */
+  }
+  .loginOrRegister {
+    padding-inline-start: 10px;
+    justify-content: flex-start;
   }
 
   .ratings {

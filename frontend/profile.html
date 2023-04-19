@@ -19,38 +19,11 @@
     <header>
         <h1>Book Ducks</h1><h2>~ slogan ~</h2>
       <nav class="navbar">
-        <ul class="navLinks">
-            <li><a href="index.html"><span class="navSpan"><i class="fa-solid fa-home"></i><span>Hem</span></span></a></li>
-            <li><a href="profile.html"><span class="navSpan"><i class="fa-solid fa-user"></i><span>Profilsida</span></span></a></li>
-        </ul>
-            <div class="loginOrRegister">
-                <div class="loginDiv">
-                    <div class="login">
-                        <label for="username">Användarnamn
-                            <input type="text" name="username" id="username">
-                        </label>
-                        <label for="password">Lösenord
-                            <input type="password" name="password" id="password">
-                        </label>
-                    </div>
-                    
-                    <div class"" id="registerDiv">
-                        <label for="username">Användarnamn
-                            <input type="text" name="username" id="regUsername">
-                        </label>
-                        <label for="email">Email
-                            <input type="email" name="email" id="regEmail">
-                        </label>
-                        <label for="password">Lösenord
-                            <input type="password" name="password" id="regPassword">
-                        </label>
-            
-                    </div>
-                     <button type="submit" id="loginBtn">Logga in</button>
-                        <button id="registerBtn">Registrera dig</button>  
-                </div>
-                
-            </div>
+            <ul class="navLinks">
+                <li><a href="index.html"><span class="navSpan"><i class="fa-solid fa-home"></i><span>Hem</span></span></a></li>
+                <li><a href="profile.html"><span class="navSpan"><i class="fa-solid fa-user"></i><span>Profilsida</span></span></a></li>
+            </ul>
+           
             <div class="logout hidden"></div>
         </nav>
     </header>
@@ -59,8 +32,41 @@
         <div class="main-profile-content">
             
             <div class="profileInfoDiv">
+                <div class="loginOrRegister hidden">
+                    <div class="loginDiv">
+                        <div class="linkDiv">
+                            <span><a href="#loginLink">Logga in</a></span>
+                            <span><a href="#registerLink">Registrera</a></span>
+                        </div>
+                        <div class="login" id="loginLink">
+                            <label for="username">Användarnamn
+                                <input type="text" name="username" id="username">
+                            </label>
+                            <label for="password">Lösenord
+                                <input type="password" name="password" id="password">
+                            </label>
+                            <button type="submit" id="loginBtn">Logga in</button>
+                        </div>
+                            
+                        
+                        <div class="registerDiv" id="registerLink">
+                            <label for="username">Användarnamn
+                                <input type="text" name="username" id="regUsername">
+                            </label>
+                            <label for="email">Email
+                                <input type="email" name="email" id="regEmail">
+                            </label>
+                            <label for="password">Lösenord
+                                <input type="password" name="password" id="regPassword">
+                            </label>
+                            <button id="registerBtn">Registrera dig</button>          
+                        </div>
+                    </div>
+                    
+                </div>
                 <div class="profile-one">
                     <div class="welcomeMessage"></div>
+                    
                     <div class="userInfo"></div>
                 </div>
                 <div class="profile-two">

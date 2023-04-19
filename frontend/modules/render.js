@@ -1,6 +1,8 @@
 import { toReadMeList } from "./api.js";
 import { ratingSection } from "./rating.js";
 import { sortByTitle, sortByAuthor, sortByRating } from "./sort.js";
+import { messageModal } from "./extra.js";
+import { deleteBookMark } from "./api.js";
 
 const bookShelf = document.querySelector(".bookShelf");
 const userProfile = document.querySelector(".userInfo");
@@ -17,11 +19,12 @@ export let renderBooks = (data) => {
     bookShelf.innerHTML = "";
 
     data.forEach((book) => {
-      let { title, author, pages, releaseDate, averageRating, imageUrl } =
+      let { title, author, pages, releaseDate, averageRating, imageUrl, users } =
         book.attributes;
       let bookDiv = document.createElement("div");
       bookDiv.className = `bookDiv${book.id}`;
-      bookDiv.innerHTML = `<div class="buttonImg"><button id="save${book.id}"><i class="fa-solid fa-bookmark"></i></button>
+      bookDiv.innerHTML = `<div class="buttonImg"><button id="save${book.id}">
+      <i class="fa-solid fa-bookmark"></i></button>
       <img src="http://localhost:1337${
         imageUrl?.data.attributes.url
       }"/></div>
@@ -37,12 +40,25 @@ export let renderBooks = (data) => {
       bookShelf.append(bookDiv);
       const bookUl = document.getElementById(`bookUl${book.id}`);
       const saveBtn = document.getElementById(`save${book.id}`);
+      
       saveBtn.addEventListener("click", () => {
-        console.log("du klicka på att läsa: ", title);
-        toReadMeList(book);
+        if(sessionStorage.getItem("token")){
+          console.log("du sparade boken: ", title);
+          toReadMeList(book); 
+        } else {
+          messageModal("Du behöver logga in för att spara böcker");
+        }
       }); 
+
+      // for(let i=0; i < users.data.length; i++){
+      //   if(users.data[i].attributes.username === sessionStorage.getItem("userName")){
+      //     console.log("Hej samma namn")
+      // }   
+    
+     
       ratingSection(bookUl, book.id);
     });
+    
   };
 
 // ----------------- RENDER PROFILE ----------------- //
@@ -60,9 +76,18 @@ export let renderProfile = async () => {
     userProfile.innerHTML = `<h4>Användarnamn: ${username}</h4>
     <h4>Email: ${email}</h4>`;
     saved_books.forEach((book) => {
-      mySavedBooks.innerHTML += `<div class="savedBookDiv">
+      mySavedBooks.innerHTML += `<div class="savedBookDiv"><div class="bookmarkBtn"><button id="delete${book.id}">
+      <i class="fa-solid fa-trash-can"></i></button>
       <img src="http://localhost:1337${book.imageUrl?.formats.thumbnail.url}"/>
       <p class="savedTitle">${book.title}</p></div>`;
+      const deleteBtn = document.getElementById(`delete${book.id}`);
+
+      deleteBtn.addEventListener("click", () => {
+        console.log("försöker radera, ", book.id)
+        deleteBookMark(book.id);
+        console.log(deleteBtn.parentElement.parentElement);
+      });
+    
     });
     reviews.forEach((review) => {
       sortByTitle(reviews, sortOrder);
@@ -89,7 +114,6 @@ export function populateList(books) {
       addReviewedBooks(book);
     });
   }
-
 
 // ----------------- CREATE TABLE ----------------- //
 export function addReviewedBooks(book) {

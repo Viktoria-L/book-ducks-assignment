@@ -28,7 +28,6 @@ export let toReadMeList = async (book) => {
         },
       }
     );
-    console.log(response.data.saved_books);
     let savedBooks = response.data.saved_books || [];
     savedBooks.push(book);
   
@@ -43,7 +42,21 @@ export let toReadMeList = async (book) => {
         },
       }
     );
-    console.log(response);
   };
   
+
+
+  
+    // ----------------- DELETE BOOKMARK ----------------- //
+    export let deleteBookMark = async (book) => {
+      console.log("något")
+           let response = await axios.delete(`http://localhost:1337/api/books/${book}/users/${sessionStorage.getItem("userId")}`,
+      {
+        headers: {
+          Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+        },
+      })
+      console.log("deleted data", response);
+  
+  }
 

@@ -59,4 +59,35 @@ export async function displayHighestRatedBooks() {
 
 
   }
+
+ // ----------------- IS BOOKMARKED ----------------- //
+ export async function isBookmarked () {
+    let response = await axios.get(`http://localhost:1337/api/users/me?populate=deep,4`,
+    {
+      headers: {
+        Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+      },
+    });
+    let savedBooks = response.data.saved_books;
+    savedBooks.forEach((book) => {
+      if(book.id){}
+    })
+ }
+
+
+// -------------- POPUP MESSAGE MODAL -------------- //
+export function messageModal(text) {
+  let modal = document.createElement("div");
+  let main = document.querySelector("main");
+  modal.innerText = text;
+  modal.className = "message-modal";
+  main.prepend(modal);
+  setTimeout(() => {
+    main.removeChild(modal);
+  }, 3000);
+}
+
+
+
+
   

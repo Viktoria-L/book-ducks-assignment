@@ -1,7 +1,7 @@
 import { getBooks } from "./api.js";
 import { renderProfile } from "./render.js";
 import { logOut } from "./login-logout.js";
-import { displayHighestRatedBooks } from "./extra.js";
+import { displayHighestRatedBooks, messageModal } from "./extra.js";
 
 const loginOrRegister = document.querySelector(".loginOrRegister");
 const loginDiv = document.querySelector(".loginDiv");
@@ -22,18 +22,21 @@ export let onPageLoad = () => {
         getBooks();
         logOut();
       } else {
+        window.location.href = "index.html#loginLink";
+        displayHighestRatedBooks();
         getBooks();
       }
     } else if (location.pathname === "/frontend/profile.html") {
       if (sessionStorage.getItem("token")) {
-        loginOrRegister.classList.add("hidden");
         welcomeMsg.innerHTML = `<h3>Välkommen tillbaka!</h3><p>Du är inloggad som ${sessionStorage.getItem(
           "userName"
         )}</p>`;
         logOut();
         renderProfile();
       } else {
-        welcomeMsg.innerHTML = `Du behöver vara inloggad för att komma åt profilsidan`;
+        window.location.href = "profile.html#loginLink";
+        loginOrRegister.classList.remove("hidden");
+        messageModal("Du behöver vara inloggad för att komma åt profilsidan")
         mySavedBooks.classList.add("hidden");
         myRatedBooks.classList.add("hidden");
       }
