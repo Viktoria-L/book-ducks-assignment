@@ -1,4 +1,4 @@
-:root {
+:root, .beige {
     --main-bg-color: #F2E5D0;
     --main-bg-darker-color: hsl(37, 57%, 68%);
     --main-bg-hover-color: hsl(37, 57%, 28%);
@@ -11,7 +11,7 @@
 }
 
 
-:purple {
+.purple {
     --main-bg-color: #DED0E8;
     --main-bg-darker-color: hsl(274, 37%, 57%);
     --main-bg-hover-color: hsl(274, 37%, 27%);
@@ -21,4 +21,67 @@
     --main-content-shadow-color: #c3b1d9;
     --main-button-color: #DED0E8;
     --main-button-hover: hsl(274, 37%, 57%);
+}
+
+.teal {
+        --main-bg-color: #D0E8E5;
+        --main-bg-darker-color: hsl(174, 37%, 57%);
+        --main-bg-hover-color: hsl(174, 37%, 27%);
+        --main-content-bg: #E9F3F2;
+        --main-content-hover: hsl(174, 20%, 72%);
+        --main-text-color: #000000;
+        --main-content-shadow-color: #B8DFD7;
+        --main-button-color: #D0E8E5;
+        --main-button-hover: hsl(174, 37%, 57%);
+      
+}
+
+.blue {
+    --main-bg-color: #D0E8F2;
+    --main-bg-darker-color: hsl(207, 37%, 57%);
+    --main-bg-hover-color: hsl(207, 37%, 27%);
+    --main-content-bg: #E9F3F6;
+    --main-content-hover: hsl(207, 20%, 72%);
+    --main-text-color: #000000;
+    --main-content-shadow-color: #B8DFE8;
+    --main-button-color: #D0E8F2;
+    --main-button-hover: hsl(207, 37%, 57%);
+}
+
+
+.wild {
+    --main-bg-color: #FFC0CB;
+    --main-bg-darker-color: hsl(320, 100%, 50%);
+    --main-bg-hover-color: hsl(320, 100%, 20%);
+    --main-content-bg: #FFDAB9;
+    --main-content-hover: hsl(50, 100%, 70%);
+    --main-text-color: #000000;
+    --main-content-shadow-color: #FFA07A;
+    --main-button-color: #FFC0CB;
+    --main-button-hover: hsl(320, 100%, 50%);
   }
+  
+  
+.bookstore {
+    --main-bg-color: #F5F5F5;
+    --main-bg-darker-color: #D9D9D9;
+    --main-bg-hover-color: #B3B3B3;
+    --main-content-bg: #FFFFFF;
+    --main-content-hover: #F2F2F2;
+    --main-text-color: #333333;
+    --main-content-shadow-color: #B3B3B3;
+    --main-button-color: #F44336;
+    --main-button-hover: #D32F2F;
+  }
+  
+  .darkmode {
+  --main-bg-color: hsl(0, 0%, 12%);
+  --main-bg-darker-color: hsl(0, 0%, 60%);
+  --main-bg-hover-color: hsl(0, 0%, 20%);
+  --main-content-bg: hsl(0, 0%, 27%);
+  --main-content-hover: hsl(0, 0%, 10%);
+  --main-text-color: #FFFFFF;
+  --main-content-shadow-color: hsl(0, 0%, 0%);
+  --main-button-color: hsl(292, 63%, 59%);
+  --main-button-hover: hsl(290, 61%, 27%);
+}

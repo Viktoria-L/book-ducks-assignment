@@ -56,12 +56,7 @@ export async function ratingSection(element, bookId) {
           <p>Du har redan betygsatt denna bok, du gav den ${myRating} i betyg</p>
           </div>`;
       element.append(ratingDiv);
-    }
-  } else {
-    // ratingDiv.innerHTML = `<h4>Logga in för att betygsätta boken!</h4>
-    // `;
-    // element.append(ratingDiv);
-  }
+    }}
 }
 
 // ----------------- POST USER RATING TO STRAPI ----------------- //

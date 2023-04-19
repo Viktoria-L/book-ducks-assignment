@@ -19,6 +19,15 @@ h1, h2 {
 h1 {
   font-family: 'Rancho', cursive;
   font-size: 54px;
+  text-shadow: -1px 0 var(--main-content-bg),
+              0 1px  var(--main-content-color),
+              1px 0 rgba(0, 0, 0, 0.44),
+              0 -1px rgba(0, 0, 0, 0.48);
+
+}
+h2 {
+  font-family: 'Rancho', cursive;
+  letter-spacing: 2px;
 }
 h3 {
   margin: 0;
@@ -43,7 +52,7 @@ header {
 #registerBtn,
 #loginBtn {
   margin-top: 10px;
-  padding: 2px 50px;
+  padding: 2px 40px;
   width: 100%;
   background-color: var(--main-button-color);
   border: 1px solid var(--main-bg-darker-color);
@@ -121,6 +130,7 @@ ul {
 a {
     text-decoration: none;
     color: var(--main-text-color);
+    font-weight: 600;
   } 
 
 
@@ -180,9 +190,10 @@ a {
     padding-top: 30px;
   }
 .loginDiv {
-  border: 2px solid var(--main-bg-color);
+    border: 2px solid var(--main-bg-color);
   border-radius: 10px;
   min-width: 200px;
+  box-shadow: 0 0 8px 2px var(--main-content-shadow-color);
 }
 
 .linkDiv {
@@ -256,6 +267,9 @@ a {
  .welcomeMessage {
   padding: 10px 0 0 30px;
  }
+ .welcomeMessage:not(.profile-one .welcomeMessage){
+  text-align: center;
+ }
  .welcomeMessage p {
   margin: 0;
  }
@@ -298,14 +312,13 @@ a {
  }
  .heading h2 {
   color: var(--main-bg-darker-color);
-  /* text-shadow: var(--main-content-shadow-color) 1px 0 10px; */
   text-shadow: -1px 0 rgba(0, 0, 0, 0.515), 0 1px rgba(0, 0, 0, 0.418), 1px 0 rgba(0, 0, 0, 0.44), 0 -1px rgba(0, 0, 0, 0.48);
   font-family: 'Rancho', cursive;
-  font-size: 40px;
+  font-size: 42px;
  }
 
  .bookShelf {
-  padding: 20px 0;
+  padding: 20px 10px;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -470,6 +483,9 @@ a {
 .mySavedBooks {
   width: 100%;
 }
+.mySavedBooks p {
+  margin-left: 5px;
+}
 .savedBooksDiv {
   display: flex;
   background-color: var(--main-bg-color); 
@@ -479,12 +495,13 @@ a {
   overflow-y: hidden;
   overflow-x: auto;
   scroll-behavior: smooth;
-  max-height: 315px;
+  max-height: 320px;
 }
 .savedBookDiv {
   position: relative;
   min-width: 150px;
-  max-width: 175px;
+  max-width: 150px;
+  
   margin: 10px;
   padding: 10px;
   background-color: var(--main-content-bg);
@@ -559,6 +576,9 @@ table {
   background-color: var(--main-bg-color);
     margin: 10px 20px;
  }
+ .myRatedBooks p {
+  margin-left: 23px;
+ }
  th {
   background-color: var(--main-bg-darker-color);
   padding: 8px;
@@ -571,6 +591,9 @@ table {
  }
  th:hover:not(:nth-child(1)) {
   background-color: var(--main-bg-color);
+ }
+ td {
+  padding-left: 5px;
  }
  td img {
   width: 96px;
@@ -673,19 +696,17 @@ table {
     display: flex;
     justify-content: center;
     width: 100%;
-    height: 200px;
+    height: 250px;
     margin: 0;
     padding: 0;
   }
   .welcome-content {
-    margin-top: 30px;
-    height: 250px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 260px;
   }
   .profileInfoDiv {
     margin-top: 30px;
-  }
-  .profile-one {
-    justify-content: center;
   }
 }
 
@@ -696,8 +717,7 @@ table {
     align-items: center;
   }
   .welcomeMessage {
-  text-align: center;
-  padding-left: 0;
+  padding-left: 20px;
   }
  
  
@@ -706,7 +726,21 @@ table {
 
 /* För skärmstorlekar på 548px och mindre, dvs mobil */ 
 @media (max-width: 548px) {
-  
+  .profile-one {
+    flex-direction: column;
+    align-items: center;
+  }
+  .welcomeMessage {
+    text-align: center;
+  }
+  .profile-one .welcomeMessage {
+    padding: 0;
+    text-align: center;
+  }
+  .userInfo {
+    text-align: center;
+    margin-right: 0;
+  }
 }
 
 /* För skärmstorlekar på 490px och mindre, dvs mobil */ 
@@ -727,7 +761,7 @@ table {
   }
   .loginOrRegister {
     padding-inline-start: 10px;
-    justify-content: flex-start;
+  
   }
 
   .ratings {

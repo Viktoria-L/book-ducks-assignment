@@ -1,4 +1,4 @@
-import { getBooks } from "./api.js";
+import { checkTheme, getBooks } from "./api.js";
 import { renderProfile } from "./render.js";
 import { logOut } from "./login-logout.js";
 import { displayHighestRatedBooks, messageModal } from "./extra.js";
@@ -11,6 +11,8 @@ const myRatedBooks = document.querySelector(".myRatedBooks");
 
 // --------------- LOAD PAGES --------------- //
 export let onPageLoad = () => {
+  checkTheme();
+  
     if (location.pathname === "/frontend/index.html") {
       if (sessionStorage.getItem("token")) {
         console.log("Ja, någon är inloggad");

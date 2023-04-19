@@ -4,7 +4,8 @@
   "info": {
     "singularName": "page-config",
     "pluralName": "page-configs",
-    "displayName": "pageConfig"
+    "displayName": "pageConfig",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -14,12 +15,15 @@
     "theme": {
       "type": "enumeration",
       "enum": [
-        "earth",
-        "water",
-        "fire",
-        "wind"
+        "beige",
+        "darkmode",
+        "purple",
+        "teal",
+        "blue",
+        "wild",
+        "bookstore"
       ],
-      "default": "earth",
+      "default": "beige",
       "required": true
     }
   }
