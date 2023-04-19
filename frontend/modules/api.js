@@ -6,6 +6,7 @@ export let checkTheme = async () => {
   let response = await axios.get("http://localhost:1337/api/page-config");
   let theme = response.data.data.attributes.theme;
   document.documentElement.classList.add(theme);
+  document.documentElement.classList.remove("hidden");
 };
 
 // ----------------- GET BOOKS AND RENDER ----------------- //

@@ -12,7 +12,7 @@ const myRatedBooks = document.querySelector(".myRatedBooks");
 // --------------- LOAD PAGES --------------- //
 export let onPageLoad = () => {
   checkTheme();
-
+  
   if (location.pathname === "/frontend/index.html") {
     if (sessionStorage.getItem("token")) {
       console.log("Ja, någon är inloggad");
