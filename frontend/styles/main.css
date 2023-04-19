@@ -152,8 +152,8 @@ a {
   .navbar {
     display: flex;
     justify-content: space-between;
-    margin-left: 125px;
-    margin-right: 125px;
+    margin-left: 30px;
+    margin-right: 30px;
     font-weight: 700;
   }
   .navbar ul {
@@ -682,13 +682,6 @@ footer p {
 
 /* ------------------- MEDIA QUERIES -------------- */
 
-/* För skärmstorlekar på 1024px och mindre, dvs mobil */ 
-@media (max-width: 1024px) {
-   .navbar {
-    margin-left: 75px;
-    margin-right: 75px;
-  }
-}
 
 /* För skärmstorlekar på 880px och mindre, dvs mobil */ 
 @media (max-width: 880px) {

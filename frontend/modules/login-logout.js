@@ -20,10 +20,7 @@ export let registerOrLogin = async (info, url) => {
       logOut();
     })
     .catch((error) => {
-      messageModal(
-        "Det gick inte att logga in, försök igen!",
-        error.name + " " + error.message
-      );
+            console.log(error.name + " " + error.message);
     });
 };
 

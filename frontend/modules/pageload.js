@@ -15,7 +15,6 @@ export let onPageLoad = () => {
   
   if (location.pathname === "/frontend/index.html") {
     if (sessionStorage.getItem("token")) {
-      console.log("Ja, någon är inloggad");
       loginDiv.classList.add("hidden");
       welcomeMsg.innerHTML = `<h3>Välkommen tillbaka!</h3><p>Du är inloggad som ${sessionStorage.getItem(
         "userName"
@@ -38,7 +37,9 @@ export let onPageLoad = () => {
     } else {
       window.location.href = "profile.html#loginLink";
       loginOrRegister.classList.remove("hidden");
-      messageModal("Du behöver vara inloggad för att komma åt profilsidan");
+      setTimeout(() => {
+        messageModal("Du behöver vara inloggad för att komma åt profilsidan");        
+      }, 1000);
       mySavedBooks.classList.add("hidden");
       myRatedBooks.classList.add("hidden");
     }
