@@ -27,5 +27,5 @@ Sidan ska fungera utan några större buggar.
 Inloggat läge, startsida
 ![bookducks1](https://github.com/Viktoria-L/book-ducks-assignment/assets/113613194/d9abdf71-287e-4490-ba34-a34776d7993b)
 
-Inloggat läget, profilsida
+Inloggat läge, profilsida
 ![bookducks2](https://github.com/Viktoria-L/book-ducks-assignment/assets/113613194/ce7e8c81-418f-423d-9cf8-ab7fb7080f43)
